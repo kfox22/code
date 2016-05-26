@@ -23,7 +23,7 @@ elif substance == 'Ethanol ':
     mp = 159.05
     bp = 351.44
     hca = 1.0264E+05
-    hcb = -1.3963E+02
+    hcb = 0.0021734
     hcc = -3.0341E-02
     hcd = 2.0386E-03
     hce =0.0000E+00
@@ -31,10 +31,10 @@ elif substance == 'tmp224': #find REAL values for this substance
     mw = 46.06844
     mp = 159.05
     bp = 351.44
-    hca = 1.0264E+05
-    hcb = -1.3963E+02
-    hcc = -3.0341E-02
-    hcd = 2.0386E-03
+    hca = 9.5275E+04
+    hcb = 696.7
+    hcc =-1.3765
+    hcd =0.0021734
     hce =0.0000E+00
 else:
     print('Invalid substance')
