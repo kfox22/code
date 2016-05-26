@@ -41,3 +41,22 @@ else:
 def CpT
     Cp(T) = hca + hcb*T + hcc*T**2 + hcd*T**3 + hce*T**4
     return Cp(T)
+
+def q_h(mh,cp_h,T_hi,T_ho):
+    q_h=mh*cp_h*(T_hi-T_ho)
+    return q_h
+
+def q_c(mc,cp_c,T_co,T_ci):
+    q_c=mc*cp_c*(T_co-T_ci)
+    return q_c
+
+def q(F,U,A,T_hi,T_ho,T_ci,T_co):
+    R=(T_hi-T_ho)/(T_co-T_ci)
+    P=(T_co-T_ci)/(T_hi-T_ci)
+    F=((np.sqrt(R**2+1))/(R-1))*(((np.log(1-P))/(1-P*R))/\
+      (np.log(2-P(R+1-np.sqrt(R**2+1)))/(2-P(R+1+np.sqrt(R**2+1)))))
+    dT1=T_hi-T_co
+    dT2=T_ho-T_ci
+    dT_lm=(dT2-dT1)/(np.log(dT2/dT1))
+    q=F*U*A*dT_lm
+    return q
